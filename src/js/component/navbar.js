@@ -1,17 +1,36 @@
 import React from "react";
+import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import logo from "../../img/logo.png";
 
-export const Navbar = () => {
+export const Barra = () => {
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
-			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-				</Link>
-			</div>
-		</nav>
+		<Navbar variant="dark" bg="dark" expand="lg">
+			<Container fluid>
+				<Navbar.Brand href="#home">
+					<Link to="/demo">
+						<span><img src={logo} /></span>
+					</Link>
+				</Navbar.Brand>
+				<Navbar.Toggle aria-controls="navbar-dark-example" />
+				<Navbar.Collapse 
+				id="navbar-dark-example"
+				className="justify-content-end">
+					<Nav>
+						<Nav.Link href="#home">Home</Nav.Link>
+						<Nav.Link href="#link">Link</Nav.Link>
+						<NavDropdown
+							id="nav-dropdown-dark-example"
+							title="Favoritos"
+							menuVariant="dark"
+						>
+						<NavDropdown.Item href="#action/3.1">Add Favorites</NavDropdown.Item>
+						</NavDropdown>
+					</Nav>
+				</Navbar.Collapse>
+			</Container>
+		</Navbar>
 	);
 };
+
+
