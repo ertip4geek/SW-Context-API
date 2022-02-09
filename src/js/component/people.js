@@ -19,7 +19,7 @@ export const People = () => {
                     <Card.Text>
                     </Card.Text>
                     </Card.Body>
-                    <Link to={"/home/" + i}>
+                    <Link to={"/peoplesingle/" + i}>
 								<button className="btn btn-primary">Learn More</button>
 					</Link>
 								<button

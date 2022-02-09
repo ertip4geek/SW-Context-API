@@ -6,22 +6,27 @@ import { Row } from "react-bootstrap";
 
 
 
-export const Peoplesingle = ()=> {
+export const Peoplesingle = ()=> 
+{
 	const { store, actions } = useContext(Context);
 	const params = useParams();
-	// useEffect(() => {
-	// 	actions.getCharacter(params.theid);
-	// }, []);
-    <Row className="g-4">
-        {store.character.map((character, i) => {
-		return (
-		<div className="jumbotron" key={i}>
-			<h1 className="display-4">Character Height: {character.height}</h1>
+	
+	useEffect(() => {
+		console.log(!store.character.length)
+		if (!store.character.length){
+			actions.getCharacter(params.theid);
+		}
+	}, []);
+
+	return(
+	<>
+		<div className="jumbotron">
+			<h1 className="display-4">Character Height: {store.character.height}</h1>
 			<hr className="my-4" />
-			<strong>Mass</strong>
-			<p>{character.mass}</p>
-			<strong>Hair Color</strong>
-			<p>{character.hair_color}</p>
+			<h2>Mass</h2>
+			<p>{store.character.mass}</p>
+			<p>Hair Color</p>
+			<p>{store.character.hair_color}</p>
 			
 
 			<Link to="/">
@@ -29,14 +34,7 @@ export const Peoplesingle = ()=> {
 					Back home
 				</span>
 			</Link>
-		</div>
-		);
-		})}	
-	</Row>
+		</div>	
+	</>
+	);
 }
-
-
-// Peoplesingle.propTypes = {
-// 	match: PropTypes.object
-
-export default Peoplesingle;

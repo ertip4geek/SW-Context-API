@@ -21,13 +21,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 						})
 					.then(data => {
 						setStore({people: data.results});
-						console.log("people", data)
-						console.log(data)
+						// console.log("people", data)
 					})
-					.catch();
+					.catch(error => console.error("[ERROR]", error));
 			},
 			getCharacter: () => {
-				fetch("https://www.swapi.dev/api/people/1")
+				fetch("https://swapi.dev/api/people/1")
 				.then(response => {
 					if (!response.ok) {
 					throw new Error("not loading");
@@ -37,9 +36,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(data => {
 					setStore({character: data.results});
 					console.log("character", data)
-					console.log(data)
 				})
-				.catch();
+				.catch(error => console.error("[ERROR]", error));
 			},
 		}
 	}	

@@ -32,7 +32,7 @@ const Layout = () => {
 							<Planets />
 							<Vehicles />
 						</Route>
-						<Route exact path="/home/:theid">
+						<Route exact path="/peoplesingle/:theid">
 							<Peoplesingle/>
 						</Route>
 						<Route>
