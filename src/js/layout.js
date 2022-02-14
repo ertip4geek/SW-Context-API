@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Peoplecard } from "./views/peopleCard";
 import { Peoplesingle } from "./views/peopleSingle";
 import injectContext from "./store/appContext";
 
@@ -32,7 +31,7 @@ const Layout = () => {
 							<Planets />
 							<Vehicles />
 						</Route>
-						<Route exact path="/peoplesingle/:theid">
+						<Route exact path="/peopleSingle/:theid">
 							<Peoplesingle/>
 						</Route>
 						<Route>

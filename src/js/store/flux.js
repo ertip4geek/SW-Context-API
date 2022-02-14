@@ -1,4 +1,4 @@
-const getState = ({ getStore, getActions, setStore }) => {
+const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
 			people: [],
@@ -25,20 +25,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.error("[ERROR]", error));
 			},
-			getCharacter: () => {
-				fetch("https://swapi.dev/api/people/1")
-				.then(response => {
-					if (!response.ok) {
-					throw new Error("not loading");
-					}
-					return response.json();
-					})
-				.then(data => {
-					setStore({character: data.results});
-					console.log("character", data)
-				})
-				.catch(error => console.error("[ERROR]", error));
-			},
+			getCharacter: id => {
+				const endpoint = `https://swapi.dev/api/people/${id}`;
+				const config = {
+					method: "GET"
+				};
+				fetch(endpoint, config)
+					.then(res => res.json())
+					.then(data => setStore({ character: data }))
+					.catch(err => err);
+			},		
 		}
 	}	
 };
