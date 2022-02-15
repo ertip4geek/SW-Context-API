@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
 
 export const Barra = () => {
+	const { store, actions } = useContext(Context);
 	return (
 		<Navbar variant="dark" bg="dark" expand="lg">
 			<Container fluid>
@@ -24,7 +26,14 @@ export const Barra = () => {
 							title="Favoritos"
 							menuVariant="dark"
 						>
-						<NavDropdown.Item href="#action/3.1">Add Favorites</NavDropdown.Item>
+						<NavDropdown.Item href="#action/3.1">{store.favorites.map((favorites, i) => 
+							{
+							return (<p key={i}>{favorites}<button
+								type="button" onClick = {() => {actions.deleteFavorites(favorites)}
+                                }>DEL</button></p>)}
+							)
+						}
+						</NavDropdown.Item>
 						</NavDropdown>
 					</Nav>
 				</Navbar.Collapse>

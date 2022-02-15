@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 // import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/detail.css";
 
 
 
@@ -9,6 +10,8 @@ export const Peoplesingle = ()=>
 {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
+	let imgRandom = Math.floor(Math.random() * 1000 + 1);
+	let pathImg = "https://www.pcworld.es/cmsdata/features/3789766/star_wars_thumb900_1-1.jpg" + imgRandom;
 	
 	useEffect(() => {
 		console.log(!store.character.length)
@@ -16,17 +19,11 @@ export const Peoplesingle = ()=>
 			actions.getCharacter(params.theid);
 		}
 	}, []);
-
 	return(
 		<>
 			<div>
 				<div className="jumbotron-fluid mx-5 my-5 d-flex flex-row">
-					<div className="left-side d-inline-block">
-						<img
-							className="image-fluid"
-							src="https://www.pcworld.es/cmsdata/features/3789766/star_wars_thumb900_1-1.jpg"
-						/>{" "}
-					</div>
+
 					<div className="right-side d-inline-block">
 						<h1 className="text-center warning" id="name">
 							{store.character.name}
@@ -87,11 +84,15 @@ export const Peoplesingle = ()=>
 					""
 				)}
 			</div>
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
-				</span>
-			</Link>
+				<div className="d-flex justify-content-center">
+						<img
+							className="image-fluid"
+							src="https://i.blogs.es/cc0667/force-awakens/1366_2000.jpg"
+						/>{" "}
+				</div>
+				<Link to="/">
+					<span className="btn btn-primary btn-lg" href="#" role="button">Back home</span>
+				</Link>
 		</>
 	);
 }

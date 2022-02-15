@@ -19,11 +19,12 @@ export const People = () => {
                     <Card.Text>
                     </Card.Text>
                     </Card.Body>
-                    <Link to={"/peopleSingle/" + i}>
+                    <Link to={"/peopleSingle/" + people.uid}>
 								<button className="btn btn-primary">Learn More</button>
 					</Link>
 								<button
-								type="button"></button>
+								type="button" onClick = {() => {actions.setFavorites(people.name)}
+                                }>ADD</button>
                 </Card>
             </Col>
             );
