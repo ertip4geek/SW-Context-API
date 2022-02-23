@@ -6,6 +6,7 @@ const getState = ({ getStore, setStore }) => {
 			vehicles: [],
 			planet:[],
 			character: [],
+			starship: [],
 			favorites: []
 		},
 		actions: {
@@ -69,6 +70,16 @@ const getState = ({ getStore, setStore }) => {
 				fetch(endpoint, config)
 					.then(res => res.json())
 					.then(data => setStore({ character: data }))
+					.catch(err => err);
+			},		
+			getStarship: id => {
+				const endpoint = `https://swapi.dev/api/people/${id}`;
+				const config = {
+					method: "GET"
+				};
+				fetch(endpoint, config)
+					.then(res => res.json())
+					.then(data => setStore({ starship: data }))
 					.catch(err => err);
 			},		
 			setFavorites: fav => {
