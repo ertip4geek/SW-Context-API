@@ -5,16 +5,16 @@ import "../../styles/detail.css";
 
 
 
-export const Planetsingle = ()=> 
+export const Starshipsingle = ()=> 
 {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
-	let pathImg = "https://www.lafinestradigital.com/wp-content/uploads/2011/09/starwars-planetes.jpg";
+	let pathImg = "https://i.ytimg.com/vi/gnxd3t6iUiM/maxresdefault.jpg";
 	
 	useEffect(() => {
-		console.log(!store.planet.length)
-		if (!store.planet.length){
-			actions.getPlanet(params.theid);
+		console.log(!store.starship.length)
+		if (!store.starship.length){
+			actions.getStarship(params.theid);
 		}
 	}, []);
 	return(
@@ -24,7 +24,7 @@ export const Planetsingle = ()=>
 
 					<div className="right-side d-inline-block">
 						<h1 className="text-center warning" id="name">
-							{store.planet.name}
+							{store.starship.name}
 						</h1>
 						<h6 className="description mx-5 text-center text-monospace" id="fakeText">
 							{" "}
@@ -39,49 +39,49 @@ export const Planetsingle = ()=>
 					</div>
 				</div>
 				<div className="divider bg-red" />
-				{store.planet ? (
+				{store.starship ? (
 					<div className="row d-flex m-3">
-						<div className="col-2 text-warning" id="planet">
+						<div className="col-2 text-warning" id="starship">
 							<strong>Name:</strong>
 							<br />
 							<br />
-							{store.planet.name}
+							{store.starship.name}
 						</div>
-						<div className="col-2 text-warning" id="planet">
-							<strong><u>Diameter</u></strong>
+						<div className="col-2 text-warning" id="starship">
+							<strong><u>Model</u></strong>
 							<br />
 							<br />
-							{store.planet.diameter}{" "}
+							{store.starship.model}{" "}
 						</div>
-						<div className="col-2 text-warning" id="planet">
-							<strong><u>Population</u></strong>
+						<div className="col-2 text-warning" id="starship">
+							<strong><u>Manufacturer</u></strong>
 							<br />
 							<br />
-							{store.planet.population}{" "}
+							{store.starship.manufacturer}{" "}
 						</div>
-						<div className="col-2 text-warning" id="planet">
-							<strong><u>Climate</u></strong>
+						<div className="col-2 text-warning" id="starship">
+							<strong><u>Cost in Credits</u></strong>
 							<br />
 							<br />
-							{store.planet.climate}{" "}
+							{store.starship.cost_in_credits}{" "}
 						</div>
-						<div className="col-2 text-warning" id="planet">
-							<strong><u>Terrain </u></strong>
+						<div className="col-2 text-warning" id="starship">
+							<strong><u>Crew</u></strong>
 							<br />
 							<br />
-							{store.planet.terrain}{" "}
+							{store.starship.crew}{" "}
 						</div>
-						<div className="col-2 text-warning" id="planet">
-							<strong>Orbital Period:</strong>
+						<div className="col-2 text-warning" id="starship">
+							<strong><u>Passengers</u></strong>
 							<br />
 							<br />
-							{store.planet.orbital_period}{" "}
+							{store.starship.passengers}{" "}
 						</div>
-						<div className="col-2 text-warning" id="planet">
-							<strong>Rotation Period:</strong>
+						<div className="col-2 text-warning" id="starship">
+							<strong>Class</strong>
 							<br />
 							<br />
-							{store.planet.rotation_period}{" "}
+							{store.starship.vehicle_class}{" "}
 						</div>
 					</div>
 				) : (

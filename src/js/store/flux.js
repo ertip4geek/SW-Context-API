@@ -73,7 +73,7 @@ const getState = ({ getStore, setStore }) => {
 					.catch(err => err);
 			},		
 			getStarship: id => {
-				const endpoint = `https://swapi.dev/api/people/${id}`;
+				const endpoint = `https://swapi.dev/api/vehicles/${id}`;
 				const config = {
 					method: "GET"
 				};

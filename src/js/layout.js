@@ -11,6 +11,7 @@ import { People } from "./component/people";
 import { Vehicles } from "./component/vehicles";
 import { Planets } from "./component/planets";
 import { Planetsingle } from "./views/planetSingle";
+import { Starshipsingle } from "./views/starshipSingle";
 
 
 
@@ -38,6 +39,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/planetSingle/:theid">
 							<Planetsingle/>
+						</Route>
+						<Route exact path="/starshipSingle/:theid">
+							<Starshipsingle/>
 						</Route>
 						<Route exact path="/people">
 							<People />

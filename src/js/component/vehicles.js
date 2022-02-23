@@ -19,7 +19,7 @@ export const Vehicles = () => {
                     <Card.Text>
                     </Card.Text>
                     </Card.Body>
-                    <Link to={"/vehiclesSingle/" + vehicles.uid}>
+                    <Link to={"/starshipSingle/" + vehicles.uid}>
 								<button className="btn btn-primary">Learn More</button>
 					</Link>
 								<button
