@@ -24,6 +24,20 @@ export const Barra = () => {
 				id="navbar-dark-example"
 				className="justify-content-end">
 					<Nav>
+					<NavDropdown
+							id="nav-dropdown-dark-example"
+							title="Favoritos"
+							menuVariant="dark"
+						>
+						<NavDropdown.Item>{store.favorites.map((favorites, i) => 
+							{
+							return (<p key={i}>{favorites}<button
+								type="button" onClick = {() => {actions.deleteFavorites(favorites)}
+                                }><i className="fa fa-trash" aria-hidden="true"/></button></p>)}
+							)
+						}
+						</NavDropdown.Item>
+					</NavDropdown>
 						<Link to="/people">
 						<a className="btn btn-link btn-m" href="#" role="button">
 						Characters
@@ -39,20 +53,6 @@ export const Barra = () => {
 						Starships
 						</a>
 						</Link>
-						<NavDropdown
-							id="nav-dropdown-dark-example"
-							title="Favoritos"
-							menuVariant="dark"
-						>
-						<NavDropdown.Item>{store.favorites.map((favorites, i) => 
-							{
-							return (<p key={i}>{favorites}<button
-								type="button" onClick = {() => {actions.deleteFavorites(favorites)}
-                                }><i className="fa fa-trash" aria-hidden="true"/></button></p>)}
-							)
-						}
-						</NavDropdown.Item>
-						</NavDropdown>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>
