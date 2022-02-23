@@ -1,7 +1,7 @@
 {
 	"name": "react-hello-webapp",
 	"engines": {
-		"node": "14.x"
+		"node": "16.x"
 	},
 	"version": "1.0.1",
 	"description": "",
@@ -19,10 +19,6 @@
 		{
 			"name": "Alejandro Sanchez",
 			"url": "http://alesanchezr.com/"
-		},
-		{
-			"name": "Ignacio Cordoba",
-			"url": "http://github.com/nachovz"
 		}
 	],
 	"license": "ISC",
