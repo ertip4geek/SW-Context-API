@@ -34,6 +34,11 @@ export const Barra = () => {
 						Planets
 						</a>
 						</Link>
+						<Link to="/vehicles">
+						<a className="btn btn-link btn-m" href="#" role="button">
+						Starships
+						</a>
+						</Link>
 						<NavDropdown
 							id="nav-dropdown-dark-example"
 							title="Favoritos"

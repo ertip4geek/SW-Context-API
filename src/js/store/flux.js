@@ -46,7 +46,20 @@ const getState = ({ getStore, setStore }) => {
 					// console.log("planets", data)
 				})
 				.catch(error => console.error("[ERROR]", error));
-		},
+			},
+			getVehicles: () => {
+				fetch("https://www.swapi.tech/api/vehicles")
+				.then(response => {
+					if (!response.ok) {
+					throw new Error("not loading");
+					}
+					return response.json();
+					})
+				.then(data => {
+					setStore({vehicles: data.results});
+				})
+				.catch(error => console.error("[ERROR]", error));
+			},
 
 			setFavorites: fav => {
 				const store = getStore();
