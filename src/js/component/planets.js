@@ -18,7 +18,7 @@ export const Planets = () => {
                     <Card.Body>
                     <Card.Title>{planets.name}</Card.Title>
                     </Card.Body>
-                    <Link to={"/planetsSingle/" + planets.uid}>
+                    <Link to={"/planetSingle/" + planets.uid}>
 								<button className="btn btn-primary">Learn More</button>
 					</Link>
 								<button type="button" 

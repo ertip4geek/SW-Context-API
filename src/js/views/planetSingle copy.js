@@ -5,16 +5,16 @@ import "../../styles/detail.css";
 
 
 
-export const Peoplesingle = ()=> 
+export const Planetsingle = ()=> 
 {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
-	let pathImg = "https://i.blogs.es/cc0667/force-awakens/1366_2000.jpg";
+	let pathImg = "https://www.lafinestradigital.com/wp-content/uploads/2011/09/starwars-planetes.jpg";
 	
 	useEffect(() => {
-		console.log(!store.character.length)
-		if (!store.character.length){
-			actions.getCharacter(params.theid);
+		console.log(!store.planet.length)
+		if (!store.planet.length){
+			actions.getPlanet(params.theid);
 		}
 	}, []);
 	return(
@@ -24,7 +24,7 @@ export const Peoplesingle = ()=>
 
 					<div className="right-side d-inline-block">
 						<h1 className="text-center warning" id="name">
-							{store.character.name}
+							{store.planet.name}
 						</h1>
 						<h6 className="description mx-5 text-center text-monospace" id="fakeText">
 							{" "}
@@ -39,43 +39,49 @@ export const Peoplesingle = ()=>
 					</div>
 				</div>
 				<div className="divider bg-red" />
-				{store.character ? (
+				{store.planet ? (
 					<div className="row d-flex m-3">
-						<div className="col-2 text-warning" id="characters">
-							<strong><u>Name</u></strong>
+						<div className="col-2 text-warning" id="planet">
+							<strong>Name:</strong>
 							<br />
 							<br />
-							{store.character.name}
+							{store.planet.name}
 						</div>
-						<div className="col-2 text-warning" id="characters">
-							<strong><u>Birth Year</u></strong>
+						<div className="col-2 text-warning" id="planet">
+							<strong><u>Diameter</u></strong>
 							<br />
 							<br />
-							{store.character.birth_year}{" "}
+							{store.planet.diameter}{" "}
 						</div>
-						<div className="col-2 text-warning" id="characters">
-							<strong><u>Gender</u></strong>
+						<div className="col-2 text-warning" id="planet">
+							<strong><u>Population</u></strong>
 							<br />
 							<br />
-							{store.character.gender}{" "}
+							{store.planet.population}{" "}
 						</div>
-						<div className="col-2 text-warning" id="characters">
-							<strong><u>Height</u></strong>
+						<div className="col-2 text-warning" id="planet">
+							<strong><u>Climate</u></strong>
 							<br />
 							<br />
-							{store.character.height}{" "}
+							{store.planet.climate}{" "}
 						</div>
-						<div className="col-2 text-warning" id="characters">
-							<strong><u>Skin Color</u></strong>
+						<div className="col-2 text-warning" id="planet">
+							<strong><u>Terrain </u></strong>
 							<br />
 							<br />
-							{store.character.skin_color}{" "}
+							{store.planet.terrain}{" "}
 						</div>
-						<div className="col-2 text-warning" id="characters">
-							<strong><u>Eye Color</u></strong>
+						<div className="col-2 text-warning" id="planet">
+							<strong>Orbital Period:</strong>
 							<br />
 							<br />
-							{store.character.eye_color}{" "}
+							{store.planet.orbital_period}{" "}
+						</div>
+						<div className="col-2 text-warning" id="planet">
+							<strong>Rotation Period:</strong>
+							<br />
+							<br />
+							{store.planet.rotation_period}{" "}
 						</div>
 					</div>
 				) : (

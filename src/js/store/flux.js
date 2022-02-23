@@ -4,6 +4,7 @@ const getState = ({ getStore, setStore }) => {
 			people: [],
 			planets: [],
 			vehicles: [],
+			planet:[],
 			character: [],
 			favorites: []
 		},
@@ -23,16 +24,6 @@ const getState = ({ getStore, setStore }) => {
 					})
 					.catch(error => console.error("[ERROR]", error));
 			},
-			getCharacter: id => {
-				const endpoint = `https://swapi.dev/api/people/${id}`;
-				const config = {
-					method: "GET"
-				};
-				fetch(endpoint, config)
-					.then(res => res.json())
-					.then(data => setStore({ character: data }))
-					.catch(err => err);
-			},		
 			getPlanets: () => {
 				fetch("https://www.swapi.tech/api/planets?page=2&limit=9")
 				.then(response => {
@@ -60,7 +51,26 @@ const getState = ({ getStore, setStore }) => {
 				})
 				.catch(error => console.error("[ERROR]", error));
 			},
-
+			getPlanet: id => {
+				const endpoint = `https://swapi.dev/api/planets/${id}`;
+				const config = {
+					method: "GET"
+				};
+				fetch(endpoint, config)
+					.then(res => res.json())
+					.then(data => setStore({ planet: data }))
+					.catch(err => err);
+			},	
+			getCharacter: id => {
+				const endpoint = `https://swapi.dev/api/people/${id}`;
+				const config = {
+					method: "GET"
+				};
+				fetch(endpoint, config)
+					.then(res => res.json())
+					.then(data => setStore({ character: data }))
+					.catch(err => err);
+			},		
 			setFavorites: fav => {
 				const store = getStore();
 				setStore({ favorites: [...store.favorites, fav] });
