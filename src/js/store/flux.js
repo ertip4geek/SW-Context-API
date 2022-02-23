@@ -33,6 +33,21 @@ const getState = ({ getStore, setStore }) => {
 					.then(data => setStore({ character: data }))
 					.catch(err => err);
 			},		
+			getPlanets: () => {
+				fetch("https://www.swapi.tech/api/planets?page=2&limit=9")
+				.then(response => {
+					if (!response.ok) {
+					throw new Error("not loading");
+					}
+					return response.json();
+					})
+				.then(data => {
+					setStore({planets: data.results});
+					// console.log("planets", data)
+				})
+				.catch(error => console.error("[ERROR]", error));
+		},
+
 			setFavorites: fav => {
 				const store = getStore();
 				setStore({ favorites: [...store.favorites, fav] });

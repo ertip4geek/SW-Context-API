@@ -24,7 +24,7 @@ export const People = () => {
 					</Link>
 								<button
 								type="button" onClick = {() => {actions.setFavorites(people.name)}
-                                }>ADD</button>
+                                }><i className="fa fa-star-o"/></button>
                 </Card>
             </Col>
             );
