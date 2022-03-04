@@ -1,9 +1,8 @@
 # WebApp boilerplate with React JS
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/react-hello-webapp.git)
 
-<p align="center">
-<a href="https://www.loom.com/share/f37c6838b3f1496c95111e515e83dd9b"><img src="https://github.com/4GeeksAcademy/react-hello-webapp/blob/master/src/img/how-to.png?raw=true" /></a>
-</p>
+![SW_React-homepage](https://user-images.githubusercontent.com/92811902/156752886-3aae3c16-f0ca-444a-9c40-007fd9768c6a.PNG)
+
 
 
 ### Requirements:
